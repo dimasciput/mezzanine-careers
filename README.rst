@@ -4,6 +4,8 @@
 
 Mezzanine Careers is a simple Job Posting application built for the `Django`_ based CMS `Mezzanine`_.
 
+This app is NOT ready for production use but play as you will. It's pretty basic.
+
 Features
 ========
 
