@@ -1,0 +1,4 @@
+exclude .hgignore
+include CHANGELOG LICENSE README.rst
+recursive-include mezzanine-careers *
+
