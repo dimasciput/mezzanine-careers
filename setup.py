@@ -6,9 +6,9 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 import careers
 
 setup(
-    name='Mezzanine Careers',
+    name='mezzanine-careers',
     version=careers.__version__,
-    url='https://github.com/mogga/mezzanine_polls',
+    url='https://github.com/mogga/mezzanine-careers',
     author='Robert Moggach',
     author_email='rob@dashing.tv',
     license='BSD',
