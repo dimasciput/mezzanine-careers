@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 
 from careers.forms import JobPostForm
-from careers.models import JobPost, Career
+from careers.models import JobPost
 from mezzanine import template
 
 
@@ -16,7 +16,7 @@ def jobpost_months(*args):
     """
     Put a list of dates for jobposts into the template context.
     """
-    dates = Career.objects.published().values_list("publish_date", flat=True)
+    dates = JobPost.objects.published().values_list("publish_date", flat=True)
     date_dicts = [{"date": datetime(d.year, d.month, 1)} for d in dates]
     month_dicts = []
     for date_dict in date_dicts:
@@ -32,7 +32,7 @@ def jobpost_recent_posts(limit=5):
     """
     Put a list of recently published jobposts into the template context.
     """
-    return list(Career.objects.published()[:limit])
+    return list(JobPost.objects.published()[:limit])
 
 
 @register.inclusion_tag("admin/includes/quick_jobpost.html", takes_context=True)
