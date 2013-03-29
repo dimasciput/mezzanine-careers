@@ -16,7 +16,7 @@ $(function() {
 </script>
 <div class="module">
     <h2>{% trans "Quick Job Post" %}</h2>
-    <form method="post" id="quick-job-post-form" action="{% url admin:careers_jobpost_add %}">
+    <form method="post" id="quick-job-post-form" action="{% url "admin:careers_jobpost_add" %}">
         {% csrf_token %}
         <table id="quick-job-post">
             {{ form.as_table }}

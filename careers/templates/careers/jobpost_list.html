@@ -84,7 +84,7 @@
     {% trans "Tags" %}:
     {% spaceless %}
     {% for tag in jobpost.keyword_list %}
-    <a href="{% url jobpost_list_tag tag.slug %}" class="tag">{{ tag }}</a>
+    <a href="{% url "jobpost_list_tag" tag.slug %}" class="tag">{{ tag }}</a>
     {% endfor %}
     {% endspaceless %}
     <br>
