@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 
 from careers.forms import JobPostForm
-from careers.models import JobPost
+from careers.models import JobPost, Career
 from mezzanine import template
 
 
