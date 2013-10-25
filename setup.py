@@ -10,7 +10,7 @@ setup(
     version=careers.__version__,
     url='https://github.com/mogga/mezzanine-careers',
     author='Robert Moggach',
-    author_email='rob@dashing.tv',
+    author_email='rob@moggach.tv',
     license='BSD',
     description='Job Posting application for the Mezzanine CMS',
     long_description=open('README.rst').read(),
