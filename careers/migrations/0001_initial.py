@@ -31,11 +31,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='jobpost',
             name='site',
-            field=models.ForeignKey(to='sites.Site')
+            field=models.ForeignKey('sites.Site')
         ),
         migrations.AddField(
             model_name='jobpost',
             name='keywords',
-            field=KeywordsField(object_id_field='object_pk', to='generic.AssignedKeyword')
+            field=KeywordsField()
         )
     ]
