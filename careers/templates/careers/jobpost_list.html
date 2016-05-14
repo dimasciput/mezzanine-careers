@@ -6,8 +6,8 @@
 {% block meta_keywords %}{% metablock %}
 {% keywords_for page as keywords %}
 {% for keyword in keywords %}
-    {% if not forloop.first %}, {% endif %}
-    {{ keyword }}
+{% if not forloop.first %}, {% endif %}
+{{ keyword }}
 {% endfor %}
 {% endmetablock %}{% endblock %}
 
@@ -27,16 +27,16 @@
 {{ block.super }}
 {% if tag or category or year or month or author %}
 <li>{% spaceless %}
-{% if tag %}
+    {% if tag %}
     {% trans "Tag:" %} {{ tag }}
-{% else %}{% if category %}
+    {% else %}{% if category %}
     {% trans "Category:" %} {{ category }}
-{% else %}{% if year or month %}
+    {% else %}{% if year or month %}
     {% if month %}{{ month }}, {% endif %}{{ year }}
-{% else %}{% if author %}
+    {% else %}{% if author %}
     {% trans "Author:" %} {{ author.get_full_name|default:author.username }}
-{% endif %}{% endif %}{% endif %}{% endif %}
-{% endspaceless %}
+    {% endif %}{% endif %}{% endif %}{% endif %}
+    {% endspaceless %}
 </li>
 {% endif %}
 {% endblock %}
@@ -44,25 +44,25 @@
 {% block main %}
 
 {% if tag or category or year or month or author %}
-    <p>
+<p>
     {% if tag %}
-        {% trans "Viewing posts tagged" %} {{ tag }}
+    {% trans "Viewing posts tagged" %} {{ tag }}
     {% else %}{% if category %}
-        {% trans "Viewing posts for the category" %} {{ category }}
+    {% trans "Viewing posts for the category" %} {{ category }}
     {% else %}{% if year or month %}
-        {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
-        {{ year }}
+    {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
+    {{ year }}
     {% else %}{% if author %}
-        {% trans "Viewing posts by" %}
-        {{ author.get_full_name|default:author.username }}
+    {% trans "Viewing posts by" %}
+    {{ author.get_full_name|default:author.username }}
     {% endif %}{% endif %}{% endif %}{% endif %}
-    </p>
+</p>
 {% else %}
-    {% if page %}
-    {% editable page.richtextpage.content %}
-    {{ page.richtextpage.content|safe }}
-    {% endeditable %}
-    {% endif %}
+{% if page %}
+{% editable page.richtextpage.content %}
+{{ page.richtextpage.content|safe }}
+{% endeditable %}
+{% endif %}
 {% endif %}
 
 {% for jobpost in jobposts.object_list %}
@@ -84,7 +84,7 @@
     {% trans "Tags" %}:
     {% spaceless %}
     {% for tag in jobpost.keyword_list %}
-    <a href="{% url "jobpost_list_tag" tag.slug %}" class="tag">{{ tag }}</a>
+    <a href="{% url " jobpost_list_tag" tag.slug %}" class="tag">{{ tag }}</a>
     {% endfor %}
     {% endspaceless %}
     <br>
