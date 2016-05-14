@@ -33,9 +33,4 @@ class Migration(migrations.Migration):
             name='site',
             field=models.ForeignKey('sites.Site')
         ),
-        migrations.AddField(
-            model_name='jobpost',
-            name='user',
-            field=models.ForeignKey('auth.User')
-        ),
     ]
