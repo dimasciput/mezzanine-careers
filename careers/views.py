@@ -35,7 +35,7 @@ def jobpost_list(request, tag=None, year=None, month=None, template="careers/job
     # related managers for Django 1.4 and higher, which will already
     # have their data retrieved via prefetch_related.
 
-    jobposts = jobposts.select_related("user")
+    # jobposts = jobposts.select_related("user")
     if VERSION >= (1, 4):
         jobposts = jobposts.prefetch_related("keywords__keyword")
     else:
