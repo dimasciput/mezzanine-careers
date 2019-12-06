@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import jobpost_list, jobpost_detail, 
+from .views import jobpost_list, jobpost_detail
 
 # Job Post patterns.
 urlpatterns = [
